@@ -1,0 +1,12 @@
+<section class="container mt-3">
+
+  <h3>Exemplo *ngIf</h3>
+
+  <input [(ngModel)]="nome" placeholder="Nome">
+  <input [(ngModel)]="sobrenome" placeholder="Sobrenome">
+
+  <div *ngIf="nome && sobrenome">
+    Nome: {{nome}}
+    Sobrenome: {{sobrenome}}
+  </div>
+</section>
