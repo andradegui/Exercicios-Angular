@@ -1,0 +1,20 @@
+<section class="container">
+
+  <h3>Calculadora</h3>
+
+  <input type="number" [(ngModel)]="n1" class="d-block">
+  <input type="number" [(ngModel)]="n2" class="mt-2">
+
+  <div class="" *ngIf="n1 && n2">
+    <div class="d-block pt-2">
+      <button type="button" class="btn btn-info mx-1" (click)="calcular('+')">+</button>
+      <button type="button" class="btn btn-info mx-1" (click)="calcular('-')">-</button>
+      <button type="button" class="btn btn-info mx-1" (click)="calcular('*')">*</button>
+      <button type="button" class="btn btn-info mx-1" (click)="calcular('/')">/</button>
+    </div>
+
+    <p class="pt-2 display-6">
+      Resultado: {{resultado}}
+    </p>
+  </div>
+</section>

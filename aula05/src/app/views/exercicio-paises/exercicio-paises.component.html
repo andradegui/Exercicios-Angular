@@ -1,0 +1,13 @@
+<section class="container">
+  <h3>Paises Alert</h3>
+
+  <!-- <img [src]="paisImg" *ngFor="let paisImg of paisesImg"  alt=""> -->
+
+  <ul>
+    <li (click)="alertaPaises(pais)" *ngFor="let pais of paises">
+      {{pais}} <br>
+      <img src="assets/{{pais}}.jpg" alt="" style="width:200px">
+    </li>
+  </ul>
+
+</section>
