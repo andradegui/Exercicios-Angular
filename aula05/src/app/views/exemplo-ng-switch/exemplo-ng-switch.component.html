@@ -1,0 +1,22 @@
+<section class="container mt-2">
+
+  <h3>Exemplo ngSwitch</h3>
+
+  <input type="text" [(ngModel)]="dog">
+
+
+  <div class="" [ngSwitch]="dog" class="mt-1">
+    <img style="width:200px" *ngSwitchCase="'vira-lata'" src="assets/vira-lata.jpg" alt="">
+    <img style="width:200px" *ngSwitchCase="'beagle'" src="assets/beagle.jpg" alt="">
+    <img style="width:200px" *ngSwitchCase="'york'" src="assets/york.jpg" alt="">
+  </div>
+
+  <div class="mt-5">
+
+  </div>
+
+  <div class="mt-5">
+
+  </div>
+
+</section>

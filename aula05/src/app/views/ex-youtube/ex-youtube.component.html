@@ -1,0 +1,26 @@
+<section class="container mt-2">
+
+  <h3>Exercicio</h3>
+
+  <input type="text" [(ngModel)]="link">
+
+  <div class="mt-3" [ngSwitch]="link">
+
+    <a href="https://www.youtube.com/channel/UCkIEY6rUSPy4qQjLqBBLUSg" *ngSwitchCase="'via infinda'">Conheça Via Infinda</a>
+    <a href="https://www.youtube.com/c/Podpah" *ngSwitchCase="'podpa'">Conheça Podpah</a>
+    <a href="https://www.youtube.com/c/FlowPodcast" *ngSwitchCase="'flow'">Conheça Flow</a>
+    <a href="https://www.youtube.com/c/manualdomundo" *ngSwitchCase="'manual do mundo'">Conheça Manual Do Mundo</a>
+    <div *ngIf="link">
+      <p *ngSwitchDefault>Canal nao encontrado</p>
+    </div>
+  </div>
+
+  <div class="mt-5">
+
+  </div>
+
+  <div class="mt-5">
+
+  </div>
+
+</section>

@@ -1,21 +1,27 @@
-<section>
+<section class="container mt-5 text-center">
 
-  <app-exemplo-ng-if></app-exemplo-ng-if>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex1')">Exercício Calculadora</button>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex2')">Exercício Canais Youtube</button>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex3')">Exemplo *ngFor</button>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex4')">Exemplo *ngIf</button>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex5')">Exemplo *ngSwitch</button>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex6')">Exercício Países</button>
+  <button type="button" class="btn btn-dark d-block mt-5" (click)="alterar('ex7')">Exercício Números</button>
 
-  <hr>
+  <div class="" [ngSwitch]="exercicio">
+    <app-calculadora *ngSwitchCase="'ex1'"></app-calculadora>
 
-  <app-numeros></app-numeros>
+    <app-ex-youtube *ngSwitchCase="'ex2'"></app-ex-youtube>
 
-  <hr>
+    <app-exemplo-ng-for *ngSwitchCase="'ex3'"></app-exemplo-ng-for>
 
-  <app-calculadora></app-calculadora>
+    <app-exemplo-ng-if *ngSwitchCase="'ex4'"></app-exemplo-ng-if>
 
-  <hr>
+    <app-exemplo-ng-switch *ngSwitchCase="'ex5'"></app-exemplo-ng-switch>
 
-  <app-exemplo-ng-for></app-exemplo-ng-for>
+    <app-exercicio-paises *ngSwitchCase="'ex6'"></app-exercicio-paises>
 
-  <hr>
+    <app-numeros *ngSwitchCase="'ex7'"></app-numeros>
 
-  <app-exercicio-paises></app-exercicio-paises>
-
+  </div>
 </section>

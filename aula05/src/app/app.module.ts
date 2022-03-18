@@ -9,6 +9,9 @@ import { NumerosComponent } from './views/numeros/numeros.component';
 import { CalculadoraComponent } from './views/calculadora/calculadora.component';
 import { ExemploNgForComponent } from './views/exemplo-ng-for/exemplo-ng-for.component';
 import { ExercicioPaisesComponent } from './views/exercicio-paises/exercicio-paises.component';
+import { ExemploNgSwitchComponent } from './views/exemplo-ng-switch/exemplo-ng-switch.component';
+import { ExYoutubeComponent } from './views/ex-youtube/ex-youtube.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { ExercicioPaisesComponent } from './views/exercicio-paises/exercicio-pai
     NumerosComponent,
     CalculadoraComponent,
     ExemploNgForComponent,
-    ExercicioPaisesComponent
+    ExercicioPaisesComponent,
+    ExemploNgSwitchComponent,
+    ExYoutubeComponent
   ],
   imports: [
     BrowserModule,
