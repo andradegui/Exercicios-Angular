@@ -1,0 +1,60 @@
+<section class="container">
+  <h3 class="mt-2">Rating Games 2</h3>
+
+  <table class="table table-striped text-center">
+
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Status</th>
+        <th>Genêro</th>
+        <th>Plataforma</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let game of games">
+
+      <tr >
+        <th>{{game.name}}</th>
+        <th>{{game.status}}</th>
+        <th>{{game.gender}}</th>
+        <th>{{game.platform}}</th>
+        <th><button type="button" class="btn btn-danger">Excluir</button></th>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div *ngIf="gameAtual">
+    <input class="form-control w-25" placeholder="Nome Jogo" type="text" [(ngModel)]="gameAtual.name">
+
+    <br>
+
+    <select class="form-select w-25" [(ngModel)]="gameAtual.status">
+      <option value="NA">Não Informado</option>
+      <option value="Q">Quero</option>
+      <option value="T">Tenho</option>
+      <option value="J">Jogando</option>
+      <option value="Z">Zerado</option>
+    </select>
+
+    <input class="mt-4 form-control w-25" type="text" placeholder="Tipo Jogo: Ação" [(ngModel)]="gameAtual.gender">
+
+    <br>
+
+    <input class="form-control w-25" type="text" placeholder="Plataforma" [(ngModel)]="gameAtual.platform">
+
+    <div>
+      <button type="button" class="btn btn-warning mx-1 mt-2" (click)="save()">Salvar</button>
+      <button type="button" class="btn btn-warning mx-1 mt-2" (click)="cancel()">Cancelar</button>
+    </div>
+
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-success mt-2 mx-1" (click)="novo()">Novo Jogo</button>
+  </div>
+
+</section>
