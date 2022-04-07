@@ -1,0 +1,19 @@
+<section class="container mt-2">
+
+  <button [(ngModel)]="york" class="btn btn-primary mx-3">York</button>
+  <button [(ngModel)]="viraLata" class="btn btn-primary mx-3">Vira-Lata</button>
+  <button [(ngModel)]="beagle" class="btn btn-primary mx-3">Beagle</button>
+
+
+  <div [ngSwitch]="york">
+    <img style="width:200px" *ngSwitchCase="'york'" src="assets/york.jpg" alt="">
+  </div>
+
+  <div [ngSwitch]="viraLata">
+    <img style="width:200px" *ngSwitchCase="'viraLata'" src="assets/vira-lata.jpg" alt="">
+  </div>
+
+  <div class="" [ngSwitch]="beagle">
+    <img style="width:200px" *ngSwitchCase="'beagle'" src="assets/beagle.jpg" alt="">
+  </div>
+</section>
