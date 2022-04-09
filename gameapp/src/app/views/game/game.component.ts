@@ -11,6 +11,7 @@ export class GameComponent implements OnInit {
 
   games = new Array<Game>();
   gameAtual?: Game;
+  estaEditando = false;
 
   constructor(private gameService: GameService) { }
 
@@ -18,27 +19,48 @@ export class GameComponent implements OnInit {
     this.atualizar();
   }
 
-  atualizar(){
+  atualizar() {
     this.games = this.gameService.listar();
   }
 
-  novo(){
+  novo() {
     this.gameAtual = new Game();
+    this.estaEditando = false;
   }
 
-  save(){
-    if(this.gameAtual)
-    this.gameService.inserir(this.gameAtual);
+  save() {
+    if (this.gameAtual) {
+      if (!this.estaEditando) {
+        this.gameService.inserir(this.gameAtual);
+      }
+      else {
+        this.gameService.edit(this.gameAtual);
+      }
+
+    }
+
 
     this.cancel();
+    this.atualizar();
   }
 
-  cancel(){
+  cancel() {
     this.gameAtual = undefined;
   }
 
-  remove(pos: number){ //onde vai deletar, e qtd caracteres vai deletar
-    this.games.splice(pos, 1);
+  remove(id?: number) {
+    this.gameService.remove(id);
+    this.atualizar();
+  }
+
+  edit(game: Game) {
+    this.gameService.edit(game);
+    this.novo();
+  }
+
+  selecionar(game: Game) {
+    this.gameAtual = game;
+    this.estaEditando = true;
   }
 
 }
