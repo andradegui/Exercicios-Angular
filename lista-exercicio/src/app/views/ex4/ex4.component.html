@@ -1,19 +1,29 @@
 <section class="container mt-2">
 
-  <button [(ngModel)]="york" class="btn btn-primary mx-3">York</button>
-  <button [(ngModel)]="viraLata" class="btn btn-primary mx-3">Vira-Lata</button>
-  <button [(ngModel)]="beagle" class="btn btn-primary mx-3">Beagle</button>
+  <h3>Ex 4 - Em andamento</h3>
+
+  <input [(ngModel)]="name" type="text" class="form-control w-25 mt-2" placeholder="Name">
+  <input [(ngModel)]="nickname" type="text" class="form-control w-25 mt-2" placeholder="Nickname">
+
+  <select class="form-control w-25 mt-2" name="" id="">
+    <option selected>Selecione um app de mensagens</option>
+    <option (click)="exibeDS('discord')" value="discord">Discord</option>
+    <option value="whatsapp">Whatsapp</option>
+    <option value="telegram">Telegram</option>
+    
+    <div [ngSwitch]="nameApp">
+      <img *ngSwitchCase="discord" src="{{discord}}" alt="">
+      <img *ngSwitchCase="whatsapp" src="{{whatsapp}}" alt="">
+      <img *ngSwitchCase="telegram" src="{{telegram}}" alt="">
+    </div>
+  </select>
 
 
-  <div [ngSwitch]="york">
-    <img style="width:200px" *ngSwitchCase="'york'" src="assets/york.jpg" alt="">
-  </div>
 
-  <div [ngSwitch]="viraLata">
-    <img style="width:200px" *ngSwitchCase="'viraLata'" src="assets/vira-lata.jpg" alt="">
-  </div>
+  <button class="btn btn-success mt-2 w-25">Salvar</button>
 
-  <div class="" [ngSwitch]="beagle">
-    <img style="width:200px" *ngSwitchCase="'beagle'" src="assets/beagle.jpg" alt="">
-  </div>
+
+
+
+
 </section>

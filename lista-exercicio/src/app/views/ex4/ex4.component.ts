@@ -7,13 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ex4Component implements OnInit {
 
-  york = '';
-  viraLata = '';
-  beagle = '';
+  name = '';
+  nickname = '';
+
+  nameApp = '';
+
+  discord = 'assets/discord.png';
+  whatsapp = 'assets/whatsapp.png';
+  telegram = 'assets/telegram.png';
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  exibeDS(nameApp: string){
+    this.nameApp = this.discord;
+    return this.nameApp;
+  }
+
+
+
+
+
+
+
 
 }
