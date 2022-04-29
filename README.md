@@ -1,4 +1,4 @@
-- Exercícios de Angular 
+# Exercícios de Angular 
 
 * Para colocar bootstrap no projeto: rodar comando -> npm i boostrap
 
