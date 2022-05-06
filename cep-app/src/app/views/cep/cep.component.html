@@ -1,0 +1,20 @@
+<section class="text-center container">
+  <h2>Consulta de CEP</h2>
+
+  <div class="text-center">
+    <input [(ngModel)]="cep" type="text" placeholder="CEP" class="w-25">
+  </div>
+
+  <div class="">
+    <button (click)="consultarCep()" class="btn btn-primary mt-2 mb-2">Consultar</button>
+  </div>
+
+
+  <div *ngIf="endereco">
+    <p class="fw-bold" >Logradouro: {{endereco.logradouro}} </p>
+    <p class="fw-bold" >Complemento: {{endereco.complemento}}</p>
+    <p class="fw-bold" >Bairro: {{endereco.bairro}}</p>
+    <p class="fw-bold" >Localidade: {{endereco.localidade}}</p>
+    <p class="fw-bold" >UF: {{endereco.uf}}</p>
+  </div>
+</section>
