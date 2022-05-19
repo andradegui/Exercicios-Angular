@@ -8,7 +8,7 @@ import { Cliente } from '../model/cliente';
   providedIn: 'root'
 })
 export class ClienteService {
-
+  //Injetando HtppClient
   constructor(private http: HttpClient) { }
 
   listar(): Observable<Cliente[]>{
