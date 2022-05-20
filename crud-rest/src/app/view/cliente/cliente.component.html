@@ -2,8 +2,7 @@
 
 <ul>
   <li *ngFor="let cliente of clientes">
-    {{cliente.cpf}} - {{cliente.nome}}
-  </li>
+    <span (click)="editar(cliente)"> {{cliente.cpf}} - {{cliente.nome}} </span> <span (click)="excluir(cliente.id)" cursor="pointer">X</span>  </li>
 </ul>
 
 
@@ -15,7 +14,7 @@
   </div>
 
   <div class="">
-    <input type="text" [(ngModel)]="cliente.cpf">
+    <input type="text" placeholder="CPF" [(ngModel)]="cliente.cpf">
   </div>
 
   <button class="btn btn-primary" (click)="salvar()">Salvar</button>

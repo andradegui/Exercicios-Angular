@@ -11,6 +11,7 @@ export class ClienteComponent implements OnInit {
 
   clientes = new Array<Cliente>()
   cliente?: Cliente;
+  editando = false;
   constructor(private ClienteService: ClienteService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class ClienteComponent implements OnInit {
   }
 
   listar() {
+    //retorna um observable
     this.ClienteService.listar().subscribe(listaCliente => {
       this.clientes = listaCliente;
     });
@@ -25,15 +27,35 @@ export class ClienteComponent implements OnInit {
 
   novo() {
     this.cliente = new Cliente();
+    this.editando = false;
   }
 
   salvar() {
     if (this.cliente) {
-      this.ClienteService.inserir(this.cliente).subscribe(cliente => {
-        this.listar();
-        this.cliente = undefined;
-      });
+      if(!this.editando){
+        this.ClienteService.inserir(this.cliente).subscribe(cliente => {
+          this.listar();
+          this.cliente = undefined;
+        });
+      }
+      else{
+        this.ClienteService.atualizar(this.cliente).subscribe(cliente => {
+          this.listar();
+          this.cliente = undefined; //para sumir form
+        })
+      }      
     }
+  }
+
+  excluir(id: number) {
+    this.ClienteService.remover(id).subscribe(() => {
+      this.listar();
+    });
+  }
+
+  editar(cliente: Cliente) {
+    this.cliente = cliente;
+    this.editando = true;    
   }
 
 }
