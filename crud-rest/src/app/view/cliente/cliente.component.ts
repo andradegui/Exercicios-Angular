@@ -12,6 +12,8 @@ export class ClienteComponent implements OnInit {
   clientes = new Array<Cliente>()
   cliente?: Cliente;
   editando = false;
+  colunas = ['nome', 'cpf', 'acoes'];
+
   constructor(private ClienteService: ClienteService) { }
 
   ngOnInit(): void {
@@ -43,7 +45,7 @@ export class ClienteComponent implements OnInit {
           this.listar();
           this.cliente = undefined; //para sumir form
         })
-      }      
+      }
     }
   }
 
@@ -55,7 +57,7 @@ export class ClienteComponent implements OnInit {
 
   editar(cliente: Cliente) {
     this.cliente = cliente;
-    this.editando = true;    
+    this.editando = true;
   }
 
 }

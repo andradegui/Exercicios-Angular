@@ -10,7 +10,7 @@
 
 - **GET -> obter/listar**
 
-- **POST -> inserir**]
+- **POST -> inserir**
 
 - **PUT -> atualizar**
 
